@@ -1,6 +1,14 @@
-# freezeria
+# Freezeria
 
-A new Flutter project.
+This is a [Firebase](https://firebase.google.com/) project where User can order MilkShakes as per there preferences
+
+- This Project Is Not Yet Completed
+
+### Future Updates:
+
+- Adding Slider for Blending Option
+- Stream Building
+- Linking User Data With [Google Firebase](https://console.firebase.google.com/u/0/)
 
 ## Getting Started
 
