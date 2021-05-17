@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "850627995658",
+    "project_id": "freezeria-6b7d2",
+    "storage_bucket": "freezeria-6b7d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850627995658:android:984834a328554d899917f3",
+        "android_client_info": {
+          "package_name": "com.firebase.freezeria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850627995658-309v7f0ai1546r9hb19mcmbfkunp4ip5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNXuS7HXJKb84DKtFksLgoJBI24RVVnSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850627995658-309v7f0ai1546r9hb19mcmbfkunp4ip5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
