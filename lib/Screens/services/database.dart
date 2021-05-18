@@ -1,3 +1,5 @@
+//This code for linking user with database
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezeria/req_info/shakes.dart';
 
