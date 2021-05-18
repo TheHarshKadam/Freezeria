@@ -1,3 +1,5 @@
+//Common Code for Decoration
+
 import 'package:flutter/material.dart';
 
 const decorationCode = InputDecoration(
