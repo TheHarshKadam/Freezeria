@@ -1,3 +1,5 @@
+//This is card template displayed on home screen
+
 import 'package:flutter/material.dart';
 import 'package:freezeria/req_info/shakes.dart';
 
