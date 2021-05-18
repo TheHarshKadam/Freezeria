@@ -41,7 +41,7 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
 
   String _currentName;
   String _currentCupSize;
-  String _currentBlend;
+  int _currentBlend;
   String _currentFlavour;
   String _currentCream;
   String _currentToppings;
@@ -80,6 +80,20 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
               onChanged: (val) => setState(() {
                 return _currentCupSize = val;
               }),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Slider(
+              value: (_currentBlend ?? 100).toDouble(),
+              activeColor: Colors.grey[_currentBlend ?? 100],
+              inactiveColor: Colors.grey[_currentBlend ?? 100],
+              min: 100.0,
+              max: 700.0,
+              divisions: 6,
+              onChangeEnd: (val)=>setState((){
+                return _currentBlend = val.round();
+              }), onChanged: (double value) {},
             ),
             SizedBox(
               height: 20.0,
@@ -123,7 +137,7 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
                 );
               }).toList(),
               onChanged: (val) => setState(() {
-                return _currentFlavour = val;
+                return _currentToppings = val;
               }),
             ),
             SizedBox(
