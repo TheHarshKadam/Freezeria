@@ -6,7 +6,6 @@ This is a [Firebase](https://firebase.google.com/) project where User can order 
 
 ### Future Updates:
 
-- Adding Slider for Blending Option
 - Stream Building
 - Linking User Data With [Google Firebase](https://console.firebase.google.com/u/0/)
 
