@@ -17,7 +17,6 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
   final _formkey = GlobalKey<FormState>();
   final List<String> blending = ['1', '2', '3', '4', '5'];
   final List<String> cupsize = ['Select', 'Small', 'Medium', 'Large'];
-  String _flavour = 'Select';
   final List<String> flavour = [
     'Chocolate',
     'Vanilla',
