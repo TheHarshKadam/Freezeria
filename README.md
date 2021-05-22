@@ -4,9 +4,8 @@ This is a [Firebase](https://firebase.google.com/) project where User can order 
 
 - This Project Is Not Yet Completed
 
-### Future Updates:
+### Pending:
 
-- Stream Building
 - Linking User Data With [Google Firebase](https://console.firebase.google.com/u/0/)
 
 ## Getting Started
