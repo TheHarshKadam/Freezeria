@@ -16,7 +16,8 @@ class bottomSheetPanel extends StatefulWidget {
 class _bottomSheetPanelState extends State<bottomSheetPanel> {
   final _formkey = GlobalKey<FormState>();
   final List<String> blending = ['1', '2', '3', '4', '5'];
-  final List<String> cupsize = ['Select', 'Small', 'Medium', 'Large'];
+  final List<String> cupsize = ['Small', 'Medium', 'Large'];
+
   final List<String> flavour = [
     'Chocolate',
     'Vanilla',
@@ -24,7 +25,6 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
     'Blueberry',
     'Raspberry',
     'Kiwi',
-    'Select'
   ];
   final List<String> cream = [
     'Whipped',
@@ -40,7 +40,6 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
     'Sweet Lime',
     'Waffle',
     'Blackberries',
-    'Select'
   ];
 
   String _currentName;
@@ -49,15 +48,15 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
   String _currentFlavour;
   String _currentCream;
   String _currentToppings;
+
   @override
   Widget build(BuildContext context) {
     final receiveUser = Provider.of<User>(context);
-
     return StreamBuilder<UserData>(
         stream: Database(uid: receiveUser.uid).userDataStream,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            UserData recentData = snapshot.data;
+            UserData userDataStream = snapshot.data;
             return Form(
               key: _formkey,
               child: SingleChildScrollView(
@@ -71,7 +70,7 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
                       height: 20.0,
                     ),
                     TextFormField(
-                      initialValue: recentData.Name,
+                      initialValue: userDataStream.Name,
                       decoration:
                           decorationCode.copyWith(hintText: 'Enter your name'),
                       validator: (val) =>
@@ -84,7 +83,7 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
                       height: 20.0,
                     ),
                     DropdownButtonFormField(
-                      value: _currentCupSize ?? recentData.CupSize,
+                      value: _currentCupSize ?? userDataStream.CupSize,
                       items: cupsize.map((size) {
                         return DropdownMenuItem(
                           value: size,
@@ -99,24 +98,23 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
                       height: 20.0,
                     ),
                     Slider(
-                      value: (_currentBlend ?? recentData.Blend).toDouble(),
+                      value: (_currentBlend ?? userDataStream.Blend).toDouble(),
                       activeColor:
-                          Colors.grey[_currentBlend ?? recentData.Blend],
+                          Colors.grey[_currentBlend ?? userDataStream.Blend],
                       inactiveColor:
-                          Colors.grey[_currentBlend ?? recentData.Blend],
+                          Colors.grey[_currentBlend ?? userDataStream.Blend],
                       min: 100.0,
                       max: 700.0,
                       divisions: 6,
                       onChangeEnd: (val) => setState(() {
                         return _currentBlend = val.round();
                       }),
-                      
                     ),
                     SizedBox(
                       height: 20.0,
                     ),
                     DropdownButtonFormField(
-                      value: _currentFlavour ?? recentData.Flavour,
+                      value: _currentFlavour ?? userDataStream.Flavour,
                       items: flavour.map((flav) {
                         return DropdownMenuItem(
                           value: flav,
@@ -131,7 +129,7 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
                       height: 20.0,
                     ),
                     DropdownButtonFormField(
-                      value: _currentCream ?? recentData.Cream,
+                      value: _currentCream ?? userDataStream.Cream,
                       items: cream.map((crem) {
                         return DropdownMenuItem(
                           value: crem,
@@ -146,7 +144,7 @@ class _bottomSheetPanelState extends State<bottomSheetPanel> {
                       height: 20.0,
                     ),
                     DropdownButtonFormField(
-                      value: _currentToppings ?? recentData.Toppings,
+                      value: _currentToppings ?? userDataStream.Toppings,
                       items: toppings.map((top) {
                         return DropdownMenuItem(
                           value: top,
