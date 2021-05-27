@@ -1,3 +1,5 @@
+//This is an instance file
+
 class frezzeriaShakes {
   final String Name;
   final String CupSize;
